@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
+import CustomButton from '../component/CustomButton';
+import {Images} from '../theme';
 export default class LoginScreen extends Component {
   constructor() {
     super();
@@ -18,7 +20,9 @@ export default class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topView} />
+        <View style={styles.topView}>
+          <Image style={styles.image} source={Images.backgrounds.login} />
+        </View>
         <View style={styles.bottomView}>
           <View style={styles.textInputArea}>
             <CustomTextInput
@@ -33,6 +37,7 @@ export default class LoginScreen extends Component {
               secureTextEntry={true}
             />
           </View>
+          <CustomButton />
         </View>
       </View>
     );
@@ -47,6 +52,11 @@ const styles = StyleSheet.create({
   topView: {
     flex: 1,
   },
+  image: {
+    width: '100%',
+    height: '100%',
+    alignSelf: 'center',
+  },
   bottomView: {
     flex: 2,
     backgroundColor: 'white',
@@ -58,8 +68,5 @@ const styles = StyleSheet.create({
   },
   Text: {
     textAlign: 'center',
-  },
-  changeText: {
-    borderStartColor: 'blue',
   },
 });
