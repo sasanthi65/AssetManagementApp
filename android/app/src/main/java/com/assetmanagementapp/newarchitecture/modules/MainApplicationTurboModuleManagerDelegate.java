@@ -1,4 +1,4 @@
-package com.assetmanagementapp.newarchitecture.modules;
+package com.company.AssetManagmentApp.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

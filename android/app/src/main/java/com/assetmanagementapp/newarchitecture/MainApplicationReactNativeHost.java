@@ -1,4 +1,4 @@
-package com.assetmanagementapp.newarchitecture;
+package com.company.AssetManagmentApp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.assetmanagementapp.BuildConfig;
-import com.assetmanagementapp.newarchitecture.components.MainComponentsRegistry;
-import com.assetmanagementapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.company.AssetManagmentApp.BuildConfig;
+import com.company.AssetManagmentApp.newarchitecture.components.MainComponentsRegistry;
+import com.company.AssetManagmentApp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
