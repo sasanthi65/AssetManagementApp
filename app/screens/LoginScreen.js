@@ -27,7 +27,7 @@ export default class LoginScreen extends Component {
   onLoginPressed = () => {
     console.log(this.state.email);
     // Alert.alert('Wrong password');
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('Home', this.state.email);
   };
 
   onForgotPassword = () => {
