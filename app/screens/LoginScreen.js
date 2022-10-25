@@ -25,8 +25,9 @@ export default class LoginScreen extends Component {
   setPassword = text => this.setState({password: text});
 
   onLoginPressed = () => {
-    console.error(this.state.email);
-    Alert.alert('Wrong password');
+    console.log(this.state.email);
+    // Alert.alert('Wrong password');
+    this.props.navigation.navigate('Home');
   };
 
   onForgotPassword = () => {
