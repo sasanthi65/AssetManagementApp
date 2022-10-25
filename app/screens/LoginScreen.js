@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
 import CustomButton from '../component/CustomButton';
 import {Images} from '../theme';
@@ -16,6 +16,14 @@ export default class LoginScreen extends Component {
   setEmail = text => this.setState({email: text});
 
   setPassword = text => this.setState({password: text});
+
+  onLoginPressed = () => {
+    console.log('Login Pressed');
+  };
+
+  onForgotPassword = () => {
+    console.log('Forgot Password Pressed');
+  };
 
   render() {
     return (
@@ -37,7 +45,12 @@ export default class LoginScreen extends Component {
               secureTextEntry={true}
             />
           </View>
-          <CustomButton />
+          <CustomButton
+            title="Forgot Password?"
+            onPress={this.onForgotPassword}
+            type="TERTIARY"
+          />
+          <CustomButton title="LOGIN" onPress={this.onLoginPressed} />
         </View>
       </View>
     );
