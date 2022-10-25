@@ -24,10 +24,12 @@ export default class OTPValidate extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topView}>
+      
           <Image style={styles.image} source={Images.backgrounds.login} />
         </View>
         <View style={styles.bottomView}>
           <View style={styles.textInputArea}>
+          <Text style={styles.TitleText}>Email Validation</Text>
             <CustomTextInput
               placeholder="Enter your email address here"
               value={this.state.email}
