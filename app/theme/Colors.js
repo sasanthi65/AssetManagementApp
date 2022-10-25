@@ -6,6 +6,7 @@ const Colors = {
   Text: {
     PRIMARY_COLOR: '#000000',
     SECONDARY_COLOR: '#FFFFFF',
+    TERTIARY_COLOR: '#5A5959',
     LINKS: '#0F00BE',
   },
   TextField: {

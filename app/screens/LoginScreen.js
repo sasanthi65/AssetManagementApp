@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Alert,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
 import CustomButton from '../component/CustomButton';
-import {Images} from '../theme';
+import {Images, Colors} from '../theme';
 export default class LoginScreen extends Component {
   constructor() {
     super();
@@ -18,11 +25,20 @@ export default class LoginScreen extends Component {
   setPassword = text => this.setState({password: text});
 
   onLoginPressed = () => {
-    console.log('Login Pressed');
+    console.error(this.state.email);
+    Alert.alert('Wrong password');
   };
 
   onForgotPassword = () => {
     console.log('Forgot Password Pressed');
+  };
+
+  onPressGoogle = () => {
+    console.log('Google Pressed');
+  };
+
+  onPressSIgnUp = () => {
+    console.log('Sign Up');
   };
 
   render() {
@@ -35,6 +51,8 @@ export default class LoginScreen extends Component {
           <View style={styles.textInputArea}>
             <CustomTextInput
               placeholder="Enter your email address here"
+              autoCompleteType="email"
+              keyboardType="email-address"
               value={this.state.email}
               setValue={this.setEmail}
             />
@@ -51,6 +69,19 @@ export default class LoginScreen extends Component {
             type="TERTIARY"
           />
           <CustomButton title="LOGIN" onPress={this.onLoginPressed} />
+          <Text style={styles.text}>Login via</Text>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={this.onPressGoogle}>
+            <Image style={styles.icon} source={Images.icons.google} />
+          </TouchableOpacity>
+          <Text style={styles.outerText}>
+            Don't have an account?
+            <Text style={styles.innerText} onPress={this.onPressSIgnUp}>
+              {' '}
+              Sign up
+            </Text>
+          </Text>
         </View>
       </View>
     );
@@ -60,26 +91,45 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#EAE9E9',
+    backgroundColor: Colors.Background.PRIMARY_COLOR,
   },
   topView: {
     flex: 1,
   },
   image: {
-    width: '100%',
+    width: '90%',
     height: '100%',
     alignSelf: 'center',
   },
   bottomView: {
     flex: 2,
-    backgroundColor: 'white',
+    backgroundColor: Colors.Background.FULL_WHITE,
     borderTopEndRadius: 50,
     borderTopStartRadius: 50,
   },
   textInputArea: {
     marginTop: 30,
   },
-  Text: {
+  text: {
     textAlign: 'center',
+    margin: 20,
+  },
+  iconContainer: {
+    backgroundColor: 'white',
+    borderRadius: 60,
+    padding: 10,
+    alignSelf: 'center',
+    elevation: 8,
+  },
+  icon: {
+    alignSelf: 'center',
+  },
+  outerText: {
+    margin: 15,
+    alignSelf: 'center',
+  },
+  innerText: {
+    color: Colors.Text.LINKS,
+    fontWeight: 'bold',
   },
 });

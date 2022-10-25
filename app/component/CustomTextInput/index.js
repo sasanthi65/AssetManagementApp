@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, TextInput, StyleSheet, Text} from 'react-native';
+import {Colors} from '../../theme';
 
 export default class CustomTextInput extends Component {
   constructor(props) {
@@ -7,11 +8,20 @@ export default class CustomTextInput extends Component {
     this.state = {};
   }
   render() {
-    const {value, setValue, placeholder, secureTextEntry} = this.props;
+    const {
+      value,
+      setValue,
+      placeholder,
+      secureTextEntry,
+      autoCompleteType,
+      keyboardType,
+    } = this.props;
     return (
       <View style={styles.container}>
         <TextInput
           value={value}
+          autoCompleteType={autoCompleteType}
+          keyboardType={keyboardType}
           onChangeText={setValue}
           placeholder={placeholder}
           style={styles.textInput}
@@ -24,12 +34,14 @@ export default class CustomTextInput extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#D9D9D9',
+    backgroundColor: Colors.TextField.BACKGROUND_PRIMARY_COLOR,
     borderRadius: 5,
     paddingHorizontal: 20,
     marginVertical: 5,
     margin: 30,
     marginTop: 15,
   },
-  textInput: {},
+  textInput: {
+    fontSize: 16,
+  },
 });
