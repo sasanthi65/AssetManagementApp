@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View,Button} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
 import CustomButton from '../component/CustomButton';
 import {Images} from '../theme';
+
+
+
 export default class ResetPassword extends Component {
   constructor() {
     super();
@@ -17,38 +20,42 @@ export default class ResetPassword extends Component {
 
   setPassword = text => this.setState({password: text});
 
-  onLoginPressed = () => {
-    console.log('Login Pressed');
-  };
-
-  onForgotPassword = () => {
-    console.log('Forgot Password Pressed');
-  };
-
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.topView}>
+        
           <Image style={styles.image} source={Images.backgrounds.login} />
         </View>
         <View style={styles.bottomView}>
-          <Text style={styles.titleText}> Reset Password </Text>
+        <Text style={styles.titleText}> Reset Password </Text>
+        <Text style={styles.Textnew}> New Password </Text>
           <View style={styles.textInputArea}>
             <CustomTextInput
-              placeholder="Password"
+              placeholder="Enter your password here"
               value={this.state.email}
               setValue={this.setEmail}
             />
-            
+            </View>
+            <Text style={styles.Textnew}> Confirm New Password </Text>
+            <View style={styles.textInputArea}>
             <CustomTextInput
-              placeholder="New Password"
+              placeholder="Enter your new password here"
               value={this.state.password}
               setValue={this.setPassword}
               secureTextEntry={true}
             />
           </View>
+         
+
+          <View>
           
-          <CustomButton title="Submit" onPress={this.onLoginPressed} />
+          <CustomButton 
+           title= "Submit"/>
+   
+        
+         
+          </View>
         </View>
       </View>
     );
@@ -56,6 +63,7 @@ export default class ResetPassword extends Component {
 }
 
 const styles = StyleSheet.create({
+ 
   container: {
     flex: 1,
     backgroundColor: '#EAE9E9',
@@ -83,6 +91,15 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 32,
     fontWeight: "bold",
-    marginLeft:"10"
+    marginTop:40,
+    marginLeft:20,
+    color:"black"
+  },
+  Textnew: {
+    fontSize: 14,
+    fontWeight: "bold",
+    marginTop:30,
+    marginLeft:30,
+    color:"black"
   }
 });
