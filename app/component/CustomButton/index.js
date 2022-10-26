@@ -13,7 +13,6 @@ export default class CustomButton extends Component {
         onPress={onPress}
         style={[styles.container, styles[`container_${type}`]]}>
         <Text style={[styles.text, styles[`text_${type}`]]}>{title}</Text>
-
       </TouchableOpacity>
     );
   }
@@ -25,8 +24,8 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderRadius: 35,
     paddingHorizontal: 20,
-    margin: 90,
-    marginTop: 45,
+    margin: 30,
+    marginTop: 15,
   },
   container_PRIMARY: {
     backgroundColor: '#190662',
