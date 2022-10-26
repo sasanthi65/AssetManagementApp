@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "246587992523",
+    "project_id": "assetmanagementapp-15dec",
+    "storage_bucket": "assetmanagementapp-15dec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246587992523:android:c5cdc9fd1a6a46f5ad2e4e",
+        "android_client_info": {
+          "package_name": "com.company.AssetManagmentApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246587992523-8grgelsp4ti0cp4uq38nrko4h8o9chil.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlG07f8V-0YN3bF3zorDBsl-iT5M2QXCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246587992523-8grgelsp4ti0cp4uq38nrko4h8o9chil.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

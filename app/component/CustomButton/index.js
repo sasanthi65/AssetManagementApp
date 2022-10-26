@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Colors} from '../../theme';
 
 export default class CustomButton extends Component {
   constructor(props) {
@@ -20,34 +21,33 @@ export default class CustomButton extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
     marginVertical: 5,
     borderRadius: 35,
     paddingHorizontal: 20,
-<<<<<<< HEAD
     margin: 30,
     marginTop: 15,
-=======
-    margin: 0,
-    marginTop: 55,
->>>>>>> 4273a61691c30f8f9558703330b056e6440b22df
   },
   container_PRIMARY: {
-    backgroundColor: '#190662',
+    backgroundColor: Colors.Button.PRIMARY_COLOR,
+    margin: 30,
+    marginTop: 10,
+    padding: 15,
   },
   container_TERTIARY: {
-    opacity: '63%',
+    margin: 10,
+    padding: 10,
   },
   text: {
     textAlign: 'center',
     fontWeight: 'bold',
   },
   text_PRIMARY: {
-    color: 'white',
+    color: Colors.Text.SECONDARY_COLOR,
     fontSize: 20,
+    letterSpacing: 5,
   },
   text_TERTIARY: {
-    color: 'black',
+    color: Colors.Text.TERTIARY_COLOR,
     alignSelf: 'flex-end',
     fontWeight: '400',
   },
