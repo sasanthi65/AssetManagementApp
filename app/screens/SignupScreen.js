@@ -3,28 +3,56 @@ import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
 import CustomButton from '../component/CustomButton';
 import {Images} from '../theme';
+import { SignUp } from './SignUp';
+import firebase from '../../firebase';
+
 export default class SignUpScreen extends Component {
   constructor() {
     super();
     this.state = {
       isFocused: true,
+      name:'',
       email: '',
       password: '',
+      cpassword: '',
     };
   }
-
+  setName = text => this.setState({name: text});
   setEmail = text => this.setState({email: text});
-
   setPassword = text => this.setState({password: text});
+  setCPassword = text => this.setState({cpassword: text});
+
+  signupfirebase = ()=>{
+    SignUp(this.state.email,this.state.password).
+    then((res)=>{
+      alert(success);
+      console.log('res',res);
+      var userid=firebase.auth
+
+    }).
+    catch((err)=>{
+      alert(err);
+      console.log('err',err);
+    }
+    )
+
+  }
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topView}>
-          <Image style={styles.image} source={Images.backgrounds.login} />
-        </View>
+       
+        <Text style={styles.TitleText}> SignUp for a new account</Text>
+        <Text style={styles.Text}> texttexttexttexttexttexttexttexttexttexttexttexttexttext</Text>
+        
+        
         <View style={styles.bottomView}>
           <View style={styles.textInputArea}>
+          <CustomTextInput
+              placeholder="Enter your Name here"
+              value={this.state.name}
+              setValue={this.setName}
+            />
             <CustomTextInput
               placeholder="Enter your email address here"
               value={this.state.email}
@@ -38,12 +66,12 @@ export default class SignUpScreen extends Component {
             />
             <CustomTextInput
               placeholder="Confirm your password here"
-              value={this.state.password}
-              setValue={this.setPassword}
+              value={this.state.cpassword}
+              setValue={this.setCPassword}
               secureTextEntry={true}
             />
           </View>
-          <CustomButton />
+          <CustomButton title="submit" onPress={()=>{this.signupfirebase}}/>
         </View>
       </View>
     );
@@ -51,23 +79,25 @@ export default class SignUpScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    TitleText: {
+ 
+        textAlign:'center',
+        fontSize: 30,
+        fontWeight: "bold",
+        color:"black",
+        backgroundColor: 'white'
+      
+      },
   container: {
     flex: 1,
     backgroundColor: '#EAE9E9',
   },
-  topView: {
-    flex: 1,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    alignSelf: 'center',
-  },
+ 
+
   bottomView: {
     flex: 2,
     backgroundColor: 'white',
-    borderTopEndRadius: 50,
-    borderTopStartRadius: 50,
+
   },
   textInputArea: {
     marginTop: 30,

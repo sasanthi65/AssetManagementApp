@@ -11,21 +11,21 @@ export default class ResetPassword extends Component {
     super();
     this.state = {
       isFocused: true,
-      email: '',
-      password: '',
+      OTP: '',
+      
     };
   }
 
-  setEmail = text => this.setState({email: text});
+  setOTP = text => this.setState({OTP: Number});
 
-  setPassword = text => this.setState({password: text});
+  
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.topView}>
         
-          <Image style={styles.image} source={Images.backgrounds.login} />
+          <Image style={styles.image} source={Images.backgrounds.verify} />
         </View>
         <View style={styles.bottomView}>
         <Text style={styles.titleText}> Verify Your Email </Text>
@@ -33,13 +33,15 @@ export default class ResetPassword extends Component {
           <View style={styles.textInputArea}>
             
             </View>
-            <Text style={styles.Textnew}> Confirm New Password </Text>
+            <Text style={styles.Textotp}> Please type the OTP as shared on your email address 
+  joneee12@gmail.com</Text>
+
             <View style={styles.textInputArea}>
             <CustomTextInput
-              placeholder="Enter your new password here"
-              value={this.state.password}
-              setValue={this.setPassword}
-              secureTextEntry={true}
+              placeholder="Enter your OTP here"
+              value={this.state.OTP}
+              setValue={this.setOTP}
+              
             />
           </View>
          
@@ -94,8 +96,15 @@ const styles = StyleSheet.create({
   Textnew: {
     fontSize: 14,
     fontWeight: "bold",
+    marginTop:10,
+    marginLeft:30,
+    color:"gray"
+  },
+  Textotp:{
+    fontSize: 14,
+    fontWeight: "bold",
     marginTop:30,
     marginLeft:30,
     color:"black"
-  }
+  },
 });

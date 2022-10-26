@@ -17,8 +17,11 @@ export default class CustomTextInput extends Component {
           style={styles.textInput}
           secureTextEntry={secureTextEntry}
         />
+
       </View>
+    
     );
+    
   }
 }
 
@@ -27,9 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
     borderRadius: 5,
     paddingHorizontal: 20,
-    marginVertical: 5,
+    marginVertical: 1,
     margin: 30,
-    marginTop: 15,
+    marginTop: 10,
   },
   textInput: {},
+
 });

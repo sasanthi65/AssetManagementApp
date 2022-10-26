@@ -6,6 +6,8 @@ const Images = {
   //   },
   backgrounds: {
     login: require('../assets/Images/login.png'),
+    reset: require('../assets/Images/reset.png'),
+    verify: require('../assets/Images/verify.png'),
     otp: require('../assets/Images/login.png'),
     forgotPassword: require('../assets/Images/login.png'),
     resetPassword: require('../assets/Images/login.png'),

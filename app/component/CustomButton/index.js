@@ -7,10 +7,10 @@ export default class CustomButton extends Component {
     this.state = {};
   }
   render() {
-    const {onPress, title, type = 'PRIMARY'} = this.props;
+    const { title, type = 'PRIMARY'} = this.props;
     return (
       <TouchableOpacity
-        onPress={onPress}
+       
         style={[styles.container, styles[`container_${type}`]]}>
         <Text style={[styles.text, styles[`text_${type}`]]}>{title}</Text>
       </TouchableOpacity>
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderRadius: 35,
     paddingHorizontal: 20,
-    margin: 70,
+    margin: 0,
     marginTop: 55,
   },
   container_PRIMARY: {

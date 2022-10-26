@@ -25,7 +25,7 @@ export default class ResetPassword extends Component {
       <View style={styles.container}>
         <View style={styles.topView}>
         
-          <Image style={styles.image} source={Images.backgrounds.login} />
+          <Image style={styles.image} source={Images.backgrounds.reset} />
         </View>
         <View style={styles.bottomView}>
         <Text style={styles.titleText}> Reset Password </Text>
