@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Image, StyleSheet, Text, TextInput, View,Button} from 'react-native';
 import CustomTextInput from '../component/CustomTextInput';
 import CustomButton from '../component/CustomButton';
 import {Images} from '../theme';
+
+
+
 export default class LoginScreen extends Component {
   constructor() {
     super();
@@ -21,6 +24,7 @@ export default class LoginScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topView}>
+        
           <Image style={styles.image} source={Images.backgrounds.login} />
         </View>
         <View style={styles.bottomView}>
@@ -38,6 +42,15 @@ export default class LoginScreen extends Component {
             />
           </View>
           <CustomButton />
+
+          <View>
+          
+          <CustomButton 
+           title= "Signup"/>
+   
+        
+         
+          </View>
         </View>
       </View>
     );
@@ -45,6 +58,7 @@ export default class LoginScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+ 
   container: {
     flex: 1,
     backgroundColor: '#EAE9E9',
