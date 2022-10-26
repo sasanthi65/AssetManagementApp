@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.assetmanagementapp">
+  package="com.company.AssetManagmentApp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

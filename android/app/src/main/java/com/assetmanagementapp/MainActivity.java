@@ -1,4 +1,4 @@
-package com.assetmanagementapp;
+package com.company.AssetManagmentApp;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
