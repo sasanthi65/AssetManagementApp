@@ -15,17 +15,19 @@ export default class CustomTextInput extends Component {
       secureTextEntry,
       autoCompleteType,
       keyboardType,
+      ...props
     } = this.props;
     return (
       <View style={styles.container}>
         <TextInput
           value={value}
+          onChangeText={setValue}
           autoCompleteType={autoCompleteType}
           keyboardType={keyboardType}
-          onChangeText={setValue}
           placeholder={placeholder}
           style={styles.textInput}
           secureTextEntry={secureTextEntry}
+          {...props}
         />
       </View>
     );
